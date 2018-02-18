@@ -10,10 +10,15 @@ import {
 } from "react-native";
 
 import * as Actions from "../../actions";
+import QuestionCard from "./QuestionCard";
 
 class Quiz extends Component {
 	componentDidMount() {
 		this.props.fetchQuestions();
+	}
+
+	answerQuestion(questionId, response) {
+		this.props.addAnswer(questionId, response);
 	}
 
 	render() {
@@ -28,18 +33,27 @@ class Quiz extends Component {
 				</View>
 			);
 		} else {
+			const currentQuestion = this.props.questions[
+				Object.keys(this.props.answers).length
+			];
+			console.log(currentQuestion);
 			return (
 				<View>
 					<Text>Quiz</Text>
-					<Text>{Object.keys(this.props.questions).length}</Text>
+					<QuestionCard
+						question={currentQuestion}
+						onAnswer={this.answerQuestion.bind(this)}
+						answerCount={Object.keys(this.props.answers).length}
+						questionCount={Object.keys(this.props.questions).length}
+					/>
 				</View>
 			);
 		}
 	}
 }
 
-function mapStateToProps({ questions }) {
-	return { questions };
+function mapStateToProps({ questions, answers }) {
+	return { questions, answers };
 }
 
 function mapDispatchToProps(dispatch) {

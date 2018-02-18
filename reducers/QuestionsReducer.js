@@ -5,6 +5,7 @@ let initialState = {};
 const mapKeys = arr => {
 	const obj = {};
 	arr.map((item, index) => {
+		item.id = index;
 		obj[index] = item;
 	});
 	return obj;

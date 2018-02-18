@@ -17,3 +17,11 @@ export const fetchQuestions = () => {
 		});
 	};
 };
+
+export function addAnswer(id, response) {
+	const payload = { id, response };
+	return {
+		type: types.ADD_ANSWER,
+		payload
+	};
+}
