@@ -6,12 +6,15 @@ import {
 	Button,
 	ActivityIndicator
 } from "react-native";
+import { AllHtmlEntities as Entities } from "html-entities";
+
+const entities = new Entities();
 
 const QuestionCard = ({ question, onAnswer, answerCount, questionCount }) => {
 	return (
 		<View>
-			<Text>{question.category}</Text>
-			<Text>{question.question}</Text>
+			<Text>{entities.decode(question.category)}</Text>
+			<Text>{entities.decode(question.question)}</Text>
 			<Text>
 				{answerCount + 1} / of {questionCount}
 			</Text>
