@@ -25,3 +25,9 @@ export function addAnswer(id, response) {
 		payload
 	};
 }
+
+export function restartQuiz() {
+	return {
+		type: types.RESTART_QUIZ
+	};
+}

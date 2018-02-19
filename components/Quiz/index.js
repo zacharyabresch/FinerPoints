@@ -11,6 +11,7 @@ import {
 
 import * as Actions from "../../actions";
 import QuestionCard from "./QuestionCard";
+import QuizComplete from "./QuizComplete";
 
 class Quiz extends Component {
 	componentDidMount() {
@@ -21,8 +22,26 @@ class Quiz extends Component {
 		this.props.addAnswer(questionId, response);
 	}
 
+	questionsLength() {
+		return Object.keys(this.props.questions).length;
+	}
+
+	answersLength() {
+		return Object.keys(this.props.answers).length;
+	}
+
+	isComplete() {
+		return this.questionsLength() === this.answersLength();
+	}
+
+	restartQuiz() {
+		console.log("restartQuiz");
+		this.props.restartQuiz();
+		this.props.fetchQuestions();
+	}
+
 	render() {
-		if (Object.keys(this.props.questions).length === 0) {
+		if (this.questionsLength() === 0) {
 			return (
 				<View>
 					<ActivityIndicator
@@ -32,23 +51,29 @@ class Quiz extends Component {
 					/>
 				</View>
 			);
-		} else {
-			const currentQuestion = this.props.questions[
-				Object.keys(this.props.answers).length
-			];
-			console.log(currentQuestion);
+		}
+
+		if (this.isComplete()) {
 			return (
-				<View>
-					<Text>Quiz</Text>
-					<QuestionCard
-						question={currentQuestion}
-						onAnswer={this.answerQuestion.bind(this)}
-						answerCount={Object.keys(this.props.answers).length}
-						questionCount={Object.keys(this.props.questions).length}
-					/>
-				</View>
+				<QuizComplete
+					answers={this.props.answers}
+					questions={this.props.questions}
+					restartQuiz={this.restartQuiz.bind(this)}
+				/>
 			);
 		}
+		const currentQuestion = this.props.questions[this.answersLength()];
+		return (
+			<View>
+				<Text>Quiz</Text>
+				<QuestionCard
+					question={currentQuestion}
+					onAnswer={this.answerQuestion.bind(this)}
+					answerCount={this.answersLength()}
+					questionCount={this.questionsLength()}
+				/>
+			</View>
+		);
 	}
 }
 

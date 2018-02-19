@@ -1,4 +1,4 @@
-import { QUESTIONS_AVAILABLE } from "../actions/types";
+import { QUESTIONS_AVAILABLE, RESTART_QUIZ } from "../actions/types";
 
 let initialState = {};
 
@@ -15,6 +15,9 @@ const QuestionsReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case QUESTIONS_AVAILABLE:
 			return mapKeys(action.payload);
+		case RESTART_QUIZ: {
+			return initialState;
+		}
 		default:
 			return state;
 	}

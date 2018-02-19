@@ -18,18 +18,17 @@ export default class Home extends Component {
 	render() {
 		if (this.state.quizBegun) {
 			return <Quiz />;
-		} else {
-			return (
-				<View style={styles.container}>
-					<Text style={styles.welcome}>Welcome to the Trivia Challenge!</Text>
-					<Text style={styles.instructions}>
-						You will be presented with 10 True or False questions.
-					</Text>
-					<Text style={styles.instructions}>Can you score 100%?</Text>
-					<Button title="Begin Quiz" onPress={this.beginQuiz.bind(this)} />
-				</View>
-			);
 		}
+		return (
+			<View style={styles.container}>
+				<Text style={styles.welcome}>Welcome to the Trivia Challenge!</Text>
+				<Text style={styles.instructions}>
+					You will be presented with 10 True or False questions.
+				</Text>
+				<Text style={styles.instructions}>Can you score 100%?</Text>
+				<Button title="Begin Quiz" onPress={this.beginQuiz.bind(this)} />
+			</View>
+		);
 	}
 }
 
