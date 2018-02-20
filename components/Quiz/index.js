@@ -35,7 +35,6 @@ class Quiz extends Component {
 	}
 
 	restartQuiz() {
-		console.log("restartQuiz");
 		this.props.restartQuiz();
 		this.props.fetchQuestions();
 	}
