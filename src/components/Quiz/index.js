@@ -61,12 +61,10 @@ class Quiz extends Component {
 				/>
 			);
 		}
-		const currentQuestion = this.props.questions[this.answersLength()];
 		return (
 			<View>
-				<Text>Quiz</Text>
 				<QuestionCard
-					question={currentQuestion}
+					question={this.props.questions[this.answersLength()]}
 					onAnswer={this.answerQuestion.bind(this)}
 					answerCount={this.answersLength()}
 					questionCount={this.questionsLength()}
