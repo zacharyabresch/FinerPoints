@@ -31,11 +31,13 @@ const QuizComplete = props => {
 		}
 	);
 
-	const correct = listData.map(data => {
+	const correct = listData.filter(data => {
 		if (data.correct) {
 			return data;
 		}
 	});
+
+	console.log(correct);
 
 	return (
 		<View>

@@ -40,11 +40,14 @@ const styles = StyleSheet.create({
 		backgroundColor: "#F5FCFF"
 	},
 	welcome: {
-		fontSize: 20,
+		flex: 1,
+		fontSize: 30,
 		textAlign: "center",
-		margin: 10
+		margin: 10,
+		paddingTop: 30
 	},
 	instructions: {
+		flex: 1,
 		textAlign: "center",
 		color: "#333333",
 		marginBottom: 5
