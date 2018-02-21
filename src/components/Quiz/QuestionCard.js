@@ -5,7 +5,8 @@ import {
 	View,
 	Button,
 	ActivityIndicator,
-	TouchableOpacity
+	TouchableOpacity,
+	Dimensions
 } from "react-native";
 import { AllHtmlEntities as Entities } from "html-entities";
 
@@ -14,13 +15,17 @@ const entities = new Entities();
 const QuestionCard = ({ question, onAnswer, answerCount, questionCount }) => {
 	return (
 		<View style={styles.container}>
-			<Text style={styles.category}>{entities.decode(question.category)}</Text>
-			<Text style={styles.question}>{entities.decode(question.question)}</Text>
-			<Text style={styles.tally}>
-				{answerCount + 1} / of {questionCount}
-			</Text>
-			<View style={{ flex: 1, flexDirection: "row" }}>
-				<TouchableOpacity style={styles.btn}>
+			<Text style={styles.header}>{entities.decode(question.category)}</Text>
+			<View style={styles.questionContainer}>
+				<Text>{entities.decode(question.question)}</Text>
+			</View>
+			<View style={styles.tallyContainer}>
+				<Text>
+					{answerCount + 1} / of {questionCount}
+				</Text>
+			</View>
+			<View style={styles.buttonGroup}>
+				<TouchableOpacity>
 					<Button
 						title="True"
 						onPress={() => {
@@ -28,7 +33,7 @@ const QuestionCard = ({ question, onAnswer, answerCount, questionCount }) => {
 						}}
 					/>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.btn}>
+				<TouchableOpacity>
 					<Button
 						title="False"
 						onPress={() => {
@@ -41,35 +46,29 @@ const QuestionCard = ({ question, onAnswer, answerCount, questionCount }) => {
 	);
 };
 
+let { width, height } = Dimensions.get("window");
+
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		flexDirection: "column",
-		paddingTop: 30
+		width,
+		height
 	},
-	category: {
-		flex: 1,
-		textAlign: "center",
-		fontSize: 18,
-		fontWeight: "bold",
-		backgroundColor: "#f8f8f8",
-		shadowColor: "#333",
-		shadowOffset: { width: 0, height: 2 },
-		shadowOpacity: 0.2
+	header: {
+		paddingTop: 32,
+		height: 64,
+		fontSize: 20,
+		backgroundColor: "#F4F4F4",
+		borderBottomWidth: StyleSheet.hairlineWidth,
+		borderBottomColor: "#ddd",
+		paddingHorizontal: 12,
+		textAlign: "center"
 	},
-	question: {
-		flex: 1,
-		padding: 15
-	},
-	tally: {
-		flex: 1,
-		textAlign: "center",
-		borderWidth: 1,
-		borderColor: "#eee"
-	},
-	btn: {
-		flex: 1,
-		backgroundColor: "#345"
+	questionContainer: {},
+	tallyContainer: {},
+	buttonGroup: {
+		flexDirection: "row",
+		justifyContent: "center"
 	}
 });
 
