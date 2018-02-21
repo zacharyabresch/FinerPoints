@@ -5,11 +5,14 @@ const styles = StyleSheet.create({
 	listItem: {
 		flex: 1,
 		flexDirection: "row",
+		justifyContent: "space-between",
 		alignItems: "center",
-		paddingBottom: 6,
-		paddingTop: 6
+		padding: 6
 	},
-	correctIcon: {},
+	correctIcon: {
+		flex: 1 / 8,
+		alignItems: "center"
+	},
 	question: { flex: 1 }
 });
 

@@ -41,12 +41,13 @@ const QuizComplete = props => {
 	return (
 		<View style={styles.container}>
 			<View style={styles.header}>
-				<Text>
+				<Text style={qcStyles.headerText}>
 					You scored {correct.length} / {listData.length}
 				</Text>
 			</View>
 			<View style={styles.content}>
 				<FlatList
+					removeClippedSubviews={false}
 					data={listData}
 					renderItem={({ item }) => {
 						return <ListItem item={item} />;

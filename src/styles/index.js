@@ -28,7 +28,9 @@ const styles = StyleSheet.create({
 	footer: {
 		flexDirection: "row",
 		justifyContent: "space-between",
-		alignItems: "center"
+		alignItems: "center",
+		borderTopWidth: StyleSheet.hairlineWidth,
+		borderTopColor: "#AAA"
 	},
 	touchable: {
 		backgroundColor: "#33F",

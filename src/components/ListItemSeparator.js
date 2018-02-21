@@ -6,8 +6,8 @@ import VARS from "../styles/variables";
 const ListItemSeparator = () => (
 	<View
 		style={{
-			borderBottomWidth: StyleSheet.hairlineWidth,
-			borderBottomColor: VARS.borderColor
+			borderWidth: StyleSheet.hairlineWidth,
+			borderColor: VARS.borderColor
 		}}
 	/>
 );
