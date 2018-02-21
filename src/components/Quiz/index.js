@@ -56,14 +56,12 @@ class Quiz extends Component {
 			);
 		}
 		return (
-			<View>
-				<QuestionCard
-					question={this.props.questions[this.answersLength()]}
-					onAnswer={this.answerQuestion.bind(this)}
-					answerCount={this.answersLength()}
-					questionCount={this.questionsLength()}
-				/>
-			</View>
+			<QuestionCard
+				question={this.props.questions[this.answersLength()]}
+				onAnswer={this.answerQuestion.bind(this)}
+				answerCount={this.answersLength()}
+				questionCount={this.questionsLength()}
+			/>
 		);
 	}
 }

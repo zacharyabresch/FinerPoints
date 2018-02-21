@@ -8,37 +8,45 @@ import {
 } from "react-native";
 import { AllHtmlEntities as Entities } from "html-entities";
 
+import TButton from "../TButton";
+import styles from "../../styles";
+import qcStyles from "../../styles/QuestionCard";
+
 const entities = new Entities();
 
 const QuestionCard = ({ question, onAnswer, answerCount, questionCount }) => {
 	return (
-		<View>
-			<Text>{entities.decode(question.category)}</Text>
-			<View>
-				<Text>{entities.decode(question.question)}</Text>
-			</View>
-			<View>
-				<Text>
-					{answerCount + 1} / of {questionCount}
+		<View style={styles.container}>
+			<View style={styles.header}>
+				<Text style={qcStyles.headerText}>
+					{entities.decode(question.category)}
 				</Text>
 			</View>
-			<View>
-				<TouchableOpacity>
-					<Button
-						title="True"
-						onPress={() => {
-							onAnswer(question.id, true);
-						}}
-					/>
-				</TouchableOpacity>
-				<TouchableOpacity>
-					<Button
-						title="False"
-						onPress={() => {
-							onAnswer(question.id, false);
-						}}
-					/>
-				</TouchableOpacity>
+			<View style={qcStyles.content}>
+				<View style={qcStyles.questionView}>
+					<Text style={qcStyles.questionText}>
+						{entities.decode(question.question)}
+					</Text>
+				</View>
+				<View style={qcStyles.tallyView}>
+					<Text style={qcStyles.tallyText}>
+						{answerCount + 1} / of {questionCount}
+					</Text>
+				</View>
+			</View>
+			<View style={qcStyles.footer}>
+				<TButton
+					title="True"
+					onPress={() => {
+						onAnswer(question.id, true);
+					}}
+				/>
+				<TButton
+					title="False"
+					onPress={() => {
+						onAnswer(question.id, false);
+					}}
+				/>
 			</View>
 		</View>
 	);

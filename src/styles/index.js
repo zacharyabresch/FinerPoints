@@ -26,13 +26,24 @@ const styles = StyleSheet.create({
 		padding: VARS.padding
 	},
 	footer: {
+		flexDirection: "row",
+		justifyContent: "space-between",
+		alignItems: "center"
+	},
+	touchable: {
+		backgroundColor: "#33F",
+		padding: 12,
+		paddingLeft: 24,
+		paddingRight: 24,
+		borderRadius: 5,
+		flex: 1,
 		alignItems: "center",
-		justifyContent: "center",
-		backgroundColor: VARS.footerBackgroundColor,
-		height: VARS.footerHeight,
-		padding: VARS.padding,
-		borderTopWidth: VARS.borderWidth,
-		borderTopColor: VARS.borderColor
+		margin: 12
+	},
+	touchableText: {
+		color: "#EEE",
+		fontSize: 16,
+		fontWeight: "bold"
 	}
 });
 
