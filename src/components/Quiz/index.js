@@ -7,6 +7,8 @@ import * as Actions from "../../actions";
 import QuestionCard from "./QuestionCard";
 import QuizComplete from "./QuizComplete";
 
+import styles from "../../styles";
+
 class Quiz extends Component {
 	componentDidMount() {
 		this.props.fetchQuestions();
@@ -36,12 +38,14 @@ class Quiz extends Component {
 	render() {
 		if (this.questionsLength() === 0) {
 			return (
-				<View>
+				<View style={styles.activityView}>
 					<ActivityIndicator
 						animating={true}
-						style={[{ height: 80 }]}
-						size="small"
+						size="large"
+						color={"#00F"}
+						style={{ margin: 12 }}
 					/>
+					<Text>You're gonna win so hard!</Text>
 				</View>
 			);
 		}

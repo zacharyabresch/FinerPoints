@@ -46,6 +46,11 @@ const styles = StyleSheet.create({
 		color: "#EEE",
 		fontSize: 16,
 		fontWeight: "bold"
+	},
+	activityView: {
+		justifyContent: "center",
+		alignItems: "center",
+		flex: 1
 	}
 });
 
