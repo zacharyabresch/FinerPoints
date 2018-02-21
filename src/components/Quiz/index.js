@@ -1,13 +1,7 @@
 import React, { Component } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import {
-	StyleSheet,
-	Text,
-	View,
-	Button,
-	ActivityIndicator
-} from "react-native";
+import { Text, View, Button, ActivityIndicator } from "react-native";
 
 import * as Actions from "../../actions";
 import QuestionCard from "./QuestionCard";

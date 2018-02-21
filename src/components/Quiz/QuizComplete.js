@@ -1,12 +1,5 @@
 import React from "react";
-import {
-	StyleSheet,
-	Text,
-	View,
-	Button,
-	ActivityIndicator,
-	FlatList
-} from "react-native";
+import { Text, View, Button, ActivityIndicator, FlatList } from "react-native";
 
 const strToBool = str => {
 	const lookup = {
