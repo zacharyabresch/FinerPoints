@@ -2,7 +2,7 @@ import { QUESTIONS_AVAILABLE, RESTART_QUIZ } from "../actions/types";
 
 let initialState = {};
 
-const mapKeys = arr => {
+export const mapKeys = arr => {
 	const obj = {};
 	arr.map((item, index) => {
 		item.id = index;
