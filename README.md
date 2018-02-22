@@ -7,7 +7,7 @@ This is a test app built using React Native. It was built to practice and demons
 * Do [all the things][1] for React Native development (specifically, **Building Projects with Native Code**)
   * The following has _only_ been tested on **Macs** and **iOS**
   * You _definitely_ need [`react-native-cli`][15]
-* Clone this repository: `git clone`
+* Clone this repository: `git clone git@github.com:zacharyabresch/FinerPoints.git`
 * `cd FinerPoints`
 * `npm i`
 * `react-native link` - for FontAwesome assets
