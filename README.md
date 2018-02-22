@@ -16,7 +16,7 @@ This is a test app built using React Native. It was built to practice and demons
 
 * `react-native run-ios`
   * This can be tempermental. If you're having problems, do this:
-  * `rm -Rf ios/build/ node_modules && npm i && react-native run-ios`
+    * `rm -Rf ios/build/ node_modules && npm i && react-native run-ios`
   * This will run in the simulator
 * Win the trivia challenge!!
 
