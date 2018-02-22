@@ -1,13 +1,13 @@
+import "../setupTests";
 import "react-native";
 import React from "react";
 import Home from "./Home";
 
-// Note: test renderer must be required after react-native.
-import renderer from "react-test-renderer";
+import { shallow } from "enzyme";
 
 let home;
 describe("Home", () => {
-	beforeEach(() => (home = renderer.create(<Home />)));
+	beforeEach(() => (home = shallow(<Home />)));
 	afterEach(() => (home = null));
 
 	it("renders correctly", () => {
@@ -15,15 +15,13 @@ describe("Home", () => {
 	});
 
 	it("initializes the `state`", () => {
-		const expected = {
-			quizBegun: false
-		};
-		expect(home.getInstance().state).toEqual(expected);
+		const expected = { quizBegun: false };
+		const actual = home.state();
+		expect(expected).toEqual(actual);
 	});
 
-	describe("when `quizBegun` is false", () => {
-		it("renders the correct header text");
-		it("renders the correct content text");
-		it("renders the `Begin Quiz` button");
+	it("sets `quizBegun` to true when `Begin Quiz` button is clicked", () => {
+		home.find("TButton").simulate("press");
+		expect(home.state().quizBegun).toEqual(true);
 	});
 });

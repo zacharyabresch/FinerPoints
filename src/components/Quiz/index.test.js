@@ -1,9 +1,16 @@
+import "../../setupTests";
 import "react-native";
 import React from "react";
-import renderer from "react-test-renderer";
-
+import { shallow } from "enzyme";
 import Quiz from "./";
 
-xit("renders correctly", () => {
-	const tree = renderer.create(<Quiz />);
+let quiz;
+
+describe("Quiz", () => {
+	beforeEach(() => (quiz = shallow(<Quiz />)));
+	afterEach(() => (quiz = null));
+
+	it("renders the `Quiz` component correctly", () => {
+		expect(quiz).toMatchSnapshot();
+	});
 });

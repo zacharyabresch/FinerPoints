@@ -1,10 +1,16 @@
+import "../setupTests";
 import "react-native";
 import React from "react";
+import { shallow } from "enzyme";
 import App from "./App";
 
-// Note: test renderer must be required after react-native.
-import renderer from "react-test-renderer";
+let app;
 
-it("renders correctly", () => {
-	const tree = renderer.create(<App />);
+describe("App", () => {
+	beforeEach(() => (app = shallow(<App />)));
+	afterEach(() => (app = null));
+
+	it("renders the `App` component correctly", () => {
+		expect(app).toMatchSnapshot();
+	});
 });
