@@ -1,8 +1,8 @@
-import "../setupTests";
+import "../../setupTests";
 import "react-native";
 import React from "react";
 import { shallow } from "enzyme";
-import ListItem from "./ListItem";
+import ListItem from "./";
 
 let listItem;
 

@@ -1,7 +1,7 @@
-import "../setupTests";
+import "../../setupTests";
 import "react-native";
 import React from "react";
-import Home from "./Home";
+import Home from "./";
 
 import { shallow } from "enzyme";
 

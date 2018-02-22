@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Text, View } from "react-native";
 
-import Quiz from "./Quiz";
-import TButton from "./TButton";
+import Quiz from "../Quiz";
+import TButton from "../TButton";
 
-import styles from "../styles";
-import homeStyles from "../styles/Home";
+import styles from "../../styles";
+import homeStyles from "../../styles/Home";
 
 export default class Home extends Component {
 	constructor(props) {

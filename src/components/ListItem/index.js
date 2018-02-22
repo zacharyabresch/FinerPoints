@@ -3,7 +3,7 @@ import { View, Text, Image } from "react-native";
 import { AllHtmlEntities as Entities } from "html-entities";
 import Icon from "react-native-vector-icons/FontAwesome";
 
-import styles from "../styles/ListItem";
+import styles from "../../styles/ListItem";
 
 const entities = new Entities();
 
