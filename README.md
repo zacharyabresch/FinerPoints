@@ -22,7 +22,7 @@ This is a test app built using React Native. It was built to practice and demons
 
 ## Testing
 
-* Run the tests, once: `npm t`
+* Run the tests once: `npm t`
 * Run & watch the tests: `npm run test:watch`
 * Run tests & get coverage: `npm run test:coverage`
 
