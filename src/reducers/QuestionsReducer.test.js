@@ -1,4 +1,4 @@
-import reducer from "./QuestionsReducer";
+import reducer, { mapKeys } from "./QuestionsReducer";
 import * as types from "../actions/types";
 
 const sampleData = [
@@ -26,5 +26,16 @@ describe("QuestionsReducer", () => {
 	it("should handle RESTART_QUIZ", () => {
 		const expected = { type: types.RESTART_QUIZ };
 		expect(reducer({}, expected)).toEqual({});
+	});
+	describe("#mapKeys", () => {
+		it("should map an array to an object", () => {
+			const given = [{ thing: "stuff" }, { other: "things" }];
+			const expected = {
+				0: { id: 0, thing: "stuff" },
+				1: { id: 1, other: "things" }
+			};
+
+			expect(expected).toEqual(mapKeys(given));
+		});
 	});
 });

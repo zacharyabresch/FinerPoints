@@ -36,8 +36,6 @@ const QuizComplete = props => {
 		}
 	});
 
-	console.log(correct);
-
 	return (
 		<View style={styles.container}>
 			<View style={styles.header}>
