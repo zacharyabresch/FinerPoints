@@ -2,7 +2,7 @@ import axios from "axios";
 
 import * as types from "./types.js";
 
-const QUESTION_API_URL =
+export const QUESTION_API_URL =
 	"https://opentdb.com/api.php?amount=10&difficulty=hard&type=boolean";
 
 export const fetchQuestions = () => {
