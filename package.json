@@ -35,9 +35,13 @@
   },
   "jest": {
     "preset": "react-native",
-    "snapshotSerializers": ["enzyme-to-json/serializer"]
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   },
   "rnpm": {
-    "assets": ["node_modules/react-native-vector-icons/Fonts"]
+    "assets": [
+      "node_modules/react-native-vector-icons/Fonts"
+    ]
   }
 }

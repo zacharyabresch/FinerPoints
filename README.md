@@ -6,9 +6,11 @@ This is a test app built using React Native. It was built to practice and demons
 
 * Do [all the things][1] for React Native development (specifically, **Building Projects with Native Code**)
   * The following has _only_ been tested on **Macs** and **iOS**
+  * You _definitely_ need [`react-native-cli`][15]
 * Clone this repository: `git clone`
 * `cd FinerPoints`
 * `npm i`
+* `react-native link` - for FontAwesome assets
 
 ## Running
 
@@ -58,3 +60,4 @@ This is a test app built using React Native. It was built to practice and demons
 [12]: https://github.com/axios/moxios
 [13]: https://github.com/RealOrangeOne/react-native-mock
 [14]: https://github.com/arnaudbenard/redux-mock-store
+[15]: https://www.npmjs.com/package/react-native-cli

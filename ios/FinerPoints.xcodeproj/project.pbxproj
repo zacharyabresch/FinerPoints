@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		002F8B71774F4E2BB2EAE34F /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9CEDF6B70D984AD3971440B5 /* MaterialIcons.ttf */; };
 		006E20481BB44C4E907F9E11 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 704DD802AB154D52B5969308 /* Zocial.ttf */; };
