@@ -2,6 +2,10 @@
 
 This is a test app built using React Native. It was built to practice and demonstrate various elements of modern React (and React Native) development.
 
+## Objective
+
+To build a simple trivia game using an external API to supply the questions. Why does it exist? I was doing a code challenge and thought it came out pretty well!
+
 ## Installing
 
 * Do [all the things][1] for React Native development (specifically, **Building Projects with Native Code**)
